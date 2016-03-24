@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, copy) NSMutableArray *mutableArray;
+
 @end
 
 @implementation ViewController
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSMutableArray *array = @[@1, @2, @3].mutableCopy;
+    self.mutableArray = array;
+    [self.mutableArray addObject:@4];
 }
 
 - (void)didReceiveMemoryWarning {
