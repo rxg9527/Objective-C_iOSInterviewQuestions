@@ -31,6 +31,8 @@
 		0C39F5AE1CA58EB500395A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C39F5AC1CA58EB500395A96 /* Main.storyboard */; };
 		0C39F5B01CA58EB500395A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C39F5AF1CA58EB500395A96 /* Assets.xcassets */; };
 		0C39F5B31CA58EB500395A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C39F5B11CA58EB500395A96 /* LaunchScreen.storyboard */; };
+		0C39F5BA1CA58F8300395A96 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C39F5B91CA58F8300395A96 /* Father.m */; };
+		0C39F5BD1CA58F8B00395A96 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C39F5BC1CA58F8B00395A96 /* Son.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,10 @@
 		0C39F5AF1CA58EB500395A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C39F5B21CA58EB500395A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C39F5B41CA58EB500395A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C39F5B81CA58F8300395A96 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		0C39F5B91CA58F8300395A96 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		0C39F5BB1CA58F8B00395A96 /* Son.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		0C39F5BC1CA58F8B00395A96 /* Son.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,10 @@
 				0C39F5A71CA58EB500395A96 /* AppDelegate.m */,
 				0C39F5A91CA58EB500395A96 /* ViewController.h */,
 				0C39F5AA1CA58EB500395A96 /* ViewController.m */,
+				0C39F5B81CA58F8300395A96 /* Father.h */,
+				0C39F5B91CA58F8300395A96 /* Father.m */,
+				0C39F5BB1CA58F8B00395A96 /* Son.h */,
+				0C39F5BC1CA58F8B00395A96 /* Son.m */,
 				0C39F5A31CA58EB500395A96 /* Supporting Files */,
 			);
 			path = 25__objc_msgForward_demo;
@@ -420,6 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C39F5AB1CA58EB500395A96 /* ViewController.m in Sources */,
+				0C39F5BD1CA58F8B00395A96 /* Son.m in Sources */,
+				0C39F5BA1CA58F8300395A96 /* Father.m in Sources */,
 				0C39F5A81CA58EB500395A96 /* AppDelegate.m in Sources */,
 				0C39F5A51CA58EB500395A96 /* main.m in Sources */,
 			);
