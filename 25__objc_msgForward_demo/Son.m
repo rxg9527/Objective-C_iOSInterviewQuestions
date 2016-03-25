@@ -61,4 +61,21 @@
     return result;
 }
 
+/**
+ *  调用forwardInvocation:方法，将第3步获取到的方法签名包装成 Invocation 传入，如何处理就在这里面了，并返回非ni。
+ */
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    //    [super forwardInvocation:anInvocation];
+    [self.target forwardInvocation:anInvocation];
+}
+
+/**
+ *  调用doesNotRecognizeSelector: ，默认的实现是抛出异常。如果第3步没能获得一个方法签名，执行该步骤。
+ */
+- (void)doesNotRecognizeSelector:(SEL)aSelector {
+    // 在crash前 保存crash数据，供分析
+    
+    [super doesNotRecognizeSelector:aSelector]; // crash
+}
+
 @end
