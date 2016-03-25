@@ -7,11 +7,19 @@
 //
 
 #import "Son.h"
+#import "ForwardingTarget.h"
+
+@interface Son ()
+
+@property (nonatomic, strong) ForwardingTarget *target;
+
+@end
 
 @implementation Son
 
 - (instancetype)init {
     if (self = [super init]) {
+        _target = [ForwardingTarget new];
         [self performSelector:@selector(sel1) withObject:nil];
         [self performSelector:@selector(sel2) withObject:nil];
     }
@@ -25,7 +33,19 @@
     如果仍没实现，继续下面的动作。
  */
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    return YES;
+    return NO;
+}
+
+/**
+ *  调用forwardingTargetForSelector:方法，尝试找到一个能响应该消息的对象。
+    如果获取到，则直接把消息转发给它，返回非 nil 对象。
+    否则返回 nil ，继续下面的动作。
+    注意，这里不要返回 self ，否则会形成死循环。
+ */
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    id result = [super forwardingTargetForSelector:aSelector];
+    result = self.target;
+    return result;
 }
 
 @end
