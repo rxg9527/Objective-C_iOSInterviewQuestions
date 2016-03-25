@@ -43,8 +43,21 @@
     注意，这里不要返回 self ，否则会形成死循环。
  */
 - (id)forwardingTargetForSelector:(SEL)aSelector {
-    id result = [super forwardingTargetForSelector:aSelector];
-    result = self.target;
+//    id result = [super forwardingTargetForSelector:aSelector];
+//    result = self.target;
+//    return result;
+    return nil;
+}
+
+/**
+ *  调用methodSignatureForSelector:方法，尝试获得一个方法签名。
+    如果获取不到，则直接调用doesNotRecognizeSelector抛出异常。
+    如果能获取，则返回非nil：创建一个 NSlnvocation 并传给forwardInvocation:。
+ */
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    id result = [super methodSignatureForSelector:aSelector];
+    NSMethodSignature *sig = [NSMethodSignature signatureWithObjCTypes:"v@:"];
+    result = sig;
     return result;
 }
 
