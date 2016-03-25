@@ -8,6 +8,7 @@
 
 #import "Son.h"
 #import "ForwardingTarget.h"
+#import <objc/runtime.h>
 
 @interface Son ()
 
@@ -26,6 +27,12 @@
     return self;
 }
 
+id dynamicMethodIMP(id self, SEL _cmd)
+{
+    NSLog(@"%s:动态添加的方法",__FUNCTION__);
+    return @"1";
+}
+
 /**
  *  调用resolveInstanceMethod:方法 (或 resolveClassMethod:)。
     允许用户在此时为该 Class 动态添加实现。如果有实现了，则调用并返回YES，那么重新开始objc_msgSend流程。
@@ -33,7 +40,10 @@
     如果仍没实现，继续下面的动作。
  */
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    return NO;
+    class_addMethod(self.class, sel, (IMP)dynamicMethodIMP, "@@:");
+    BOOL result = [super resolveInstanceMethod:sel];
+    result = YES;
+    return result; // 1
 }
 
 /**
